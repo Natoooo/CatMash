@@ -18,8 +18,8 @@ class Db {
     return resp.json()
   }
 
-  fetchCats() {
-    return fetch(this.baseUrl + "/cats", {
+  fetchRandomCats() {
+    return fetch(this.baseUrl + "/match", {
       method: 'GET',
       headers: this.baseHeaders
     })

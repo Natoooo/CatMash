@@ -11,9 +11,9 @@ export function catsReceived(cats) {
   }
 }
 
-export function fetchCats() {
+export function fetchRandomCats() {
   return (dispatch) => {
-    db.fetchCats()
+    db.fetchRandomCats()
     .then((cats) => {
       console.log('GOT_CATS')
       dispatch(catsReceived(cats))
