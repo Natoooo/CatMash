@@ -1,8 +1,8 @@
 import { combineReducers } from "redux"
-import { imagesReducer } from "./imagesReducer"
+import { catsReducer } from "./catsReducer"
 
 const allReducers = combineReducers({
-  images: imagesReducer
+  cats: catsReducer
 })
 
 export default allReducers
