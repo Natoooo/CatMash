@@ -1,6 +1,6 @@
 from catMash import app
 from catMash.models import *
-from flask import jsonify
+from flask import jsonify, request
 import random
 
 @app.route("/cats", methods=["GET"])
@@ -27,3 +27,10 @@ def get_match():
             break
 
     return cats_schema.jsonify([left_cat, right_cat])
+
+@app.route("/vote", methods=["POST"])
+def create_vote():
+    vote = Match(**request.json)
+    db.session.add(vote)
+    db.session.commit()
+    return match_schema.jsonify(vote)

@@ -5,9 +5,15 @@ import { fetchRandomCats } from "../actions/catsAction"
 class Match extends Component {
   constructor(props) {
     super(props)
+
+    this.voted = this.voted.bind(this)
   }
 
   componentDidMount() {
+    this.props.fetchRandomCats()
+  }
+
+  voted() {
     this.props.fetchRandomCats()
   }
 
@@ -19,9 +25,10 @@ class Match extends Component {
     })
 
     return (
-      <div className="container text-center">
+      <div className="container text-center mt-3">
+        <h3 className="cm-subtitle">Quel chat est le plus mignon ?</h3>
         <div className="row">
-          <div className="col-lg-6 col-md-6 col-sm-12 w-100">
+          <div className="col-lg-6 col-md-6 col-sm-12" onClick={this.voted}>
             <img
               src={url[0]}
               className="cm-images img-thumbnail bg-secondary"
@@ -29,7 +36,7 @@ class Match extends Component {
             </img>
           </div>
 
-          <div className="col-lg-6 col-md-6 col-sm-12 w-100">
+          <div className="col-lg-6 col-md-6 col-sm-12" onClick={this.voted}>
             <img
               src={url[1]}
               className="cm-images img-thumbnail bg-white"
