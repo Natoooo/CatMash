@@ -1,5 +1,18 @@
 body {
-  padding: 0px;
+  background: linear-gradient(to left,  #e0e0eb 50%, #ffffff 50%);
   margin: 0px;
-  background-color: grey;
+  padding: 0px;
+}
+
+.cm-logo {
+  background-color: transparent;
+  display: block;
+  margin: 10px auto;
+  width: 20%;
+}
+
+.cm-title {
+  font-size: 40px;
+  font-weight: 1000;
+  margin-bottom: 60px;
 }
