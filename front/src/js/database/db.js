@@ -26,6 +26,15 @@ class Db {
     .then(this._status)
     .then(this._json)
   }
+
+  fetchCats() {
+    return fetch(this.baseUrl + "/cats", {
+      method: 'GET',
+      headers: this.baseHeaders
+    })
+    .then(this._status)
+    .then(this._json)
+  }
 }
 
 export const db = new Db()

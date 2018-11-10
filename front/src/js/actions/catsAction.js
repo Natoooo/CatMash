@@ -23,3 +23,16 @@ export function fetchRandomCats() {
     })
   }
 }
+
+export function fetchCats() {
+  return (dispatch) => {
+    db.fetchCats()
+    .then((cats) => {
+      console.log('GOT_10_PAGES')
+      dispatch(catsReceived(cats))
+    })
+    .catch(() => {
+      console.log('GOT_ERROR_PAGES')
+    })
+  }
+}

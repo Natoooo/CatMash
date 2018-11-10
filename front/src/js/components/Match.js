@@ -26,7 +26,7 @@ class Match extends Component {
 
     return (
       <div className="container text-center mt-3">
-        <h3 className="cm-subtitle">Quel chat est le plus mignon ?</h3>
+        <h3 className="cm-subtitle">Quelle photo est la plus mignonne ?</h3>
         <div className="row">
           <div className="col-lg-6 col-md-6 col-sm-12" onClick={this.voted}>
             <img

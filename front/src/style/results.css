@@ -1,0 +1,13 @@
+body {
+  margin: 0px;
+  padding: 0px;
+}
+
+.cm-results-images {
+  background-size: auto;
+  border-radius: 50%;
+  cursor: pointer;
+  height: 200px;
+  overflow: hidden;
+  width: 60%;
+}

@@ -6,7 +6,7 @@ class Header extends Component {
         <div className="conatiner mb-3">
         <div className="container">
           <img
-            src="https://image.spreadshirtmedia.com/image-server/v1/mp/designs/1015649041,width=178,height=178/yin-yang-cats-chinese-tai-chi-symbol-cool-holiday.png"
+            src="src/style/logo.png"
             className="cm-logo"
             alt="logo">
           </img>

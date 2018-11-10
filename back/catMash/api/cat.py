@@ -5,7 +5,9 @@ import random
 
 @app.route("/cats", methods=["GET"])
 def get_cats():
-    cats = Cat.query.all()
+    cats = Cat.query
+    cats = cats.limit(int(request.args.get("page_size", 10)))
+    cats = cats.offset(int(request.args.get("page_size", 10)) * int(request.args.get("page", 0)))
     return cats_schema.jsonify(cats)
 
 @app.route("/cats/<id>", methods=["GET"])

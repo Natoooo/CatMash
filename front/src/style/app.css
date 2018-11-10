@@ -24,6 +24,7 @@ body {
 
 .cm-images {
   background-size: auto;
+  border-radius: 10%;
   cursor: pointer;
   height: 300px;
   overflow: hidden;
