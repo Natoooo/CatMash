@@ -32,7 +32,7 @@ def get_match():
 
 @app.route("/vote", methods=["POST"])
 def create_vote():
-    vote = Match(**request.json)
+    vote = Vote(**request.json)
     db.session.add(vote)
     db.session.commit()
-    return match_schema.jsonify(vote)
+    return ""

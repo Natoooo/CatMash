@@ -35,6 +35,18 @@ class Db {
     .then(this._status)
     .then(this._json)
   }
+
+  createVote(loser_id, winner_id) {
+    return fetch(this.baseUrl + "/vote", {
+      method: 'POST',
+      headers: this.baseHeaders,
+      body: JSON.stringify({
+        loser_id: loser_id,
+        winner_id: winner_id
+      })
+    })
+    .then(this._status)
+  }
 }
 
 export const db = new Db()
