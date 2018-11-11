@@ -13,7 +13,7 @@ class NavBar extends Component {
           </a>
         </div>
         <ul className="nav navbar-nav m-1">
-          <Link to="/"><li><a href="#" style={{fontSize: "16px", color: "white"}}>Retour aux votes</a></li></Link>
+          <Link to="/"><li>Retour aux votes</li></Link>
         </ul>
       </nav>
     )

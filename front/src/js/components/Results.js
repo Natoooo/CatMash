@@ -16,7 +16,7 @@ class Results extends Component {
     const { cats } = this.props
 
     return (
-      <div className="container mw-100">
+      <div className="container mw-100 p-0">
         <NavBar />
         <div className="container mw-100 text-center">
           <div className="row ">
