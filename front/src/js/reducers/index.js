@@ -1,8 +1,10 @@
 import { combineReducers } from "redux"
 import { catsReducer } from "./catsReducer"
+import { facemashReducer } from "./facemashReducer"
 
 const allReducers = combineReducers({
-  cats: catsReducer
+  cats: catsReducer,
+  facemash: facemashReducer
 })
 
 export default allReducers

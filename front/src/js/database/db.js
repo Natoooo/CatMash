@@ -1,4 +1,5 @@
 import "whatwg-fetch"
+import { stringify } from "qs"
 
 class Db {
   constructor() {
@@ -27,8 +28,8 @@ class Db {
     .then(this._json)
   }
 
-  fetchCats() {
-    return fetch(this.baseUrl + "/cats", {
+  fetchCats(opts={'page': 0, 'page_size': 9}) {
+    return fetch(this.baseUrl + "/cats?" + stringify(opts), {
       method: 'GET',
       headers: this.baseHeaders
     })

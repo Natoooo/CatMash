@@ -5,11 +5,11 @@ body {
   padding: 0px;
 }
 
-.cm-logo {
+.cm-title-logo {
   background-color: transparent;
   display: block;
   margin: 10px auto;
-  width: 15%;
+  width: 10%;
 }
 
 .cm-title {
@@ -22,12 +22,17 @@ body {
   margin-bottom: 80px;
 }
 
-.cm-images {
-  background-size: auto;
-  border-radius: 10%;
-  cursor: pointer;
+.cm-container-images {
+  background-size: cover;
   height: 300px;
   overflow: hidden;
   margin-bottom: 100px;
-  width: 80%;
+  max-width: 100%;
+}
+
+.cm-images {
+  border-radius: 10%;
+  cursor: pointer;
+  height: 100%;
+  width: 60%;
 }

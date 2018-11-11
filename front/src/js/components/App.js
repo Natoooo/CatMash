@@ -1,15 +1,15 @@
 import React, { Component } from "react"
-import Header from "./Header"
+import TitleApp from "./TitleApp"
 import Match from "./Match"
-import Footer from "./Footer"
+import ChangePage from "./ChangePage"
 
 class App extends Component {
   render() {
     return (
-      <div className="container p-0">
-        <Header />
+      <div className="container mw-100">
+        <TitleApp />
         <Match />
-        <Footer />
+        <ChangePage />
       </div>
     )
   }

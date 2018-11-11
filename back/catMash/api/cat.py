@@ -5,10 +5,11 @@ import random
 
 @app.route("/cats", methods=["GET"])
 def get_cats():
-    cats = Cat.query
-    cats = cats.limit(int(request.args.get("page_size", 10)))
-    cats = cats.offset(int(request.args.get("page_size", 10)) * int(request.args.get("page", 0)))
-    return cats_schema.jsonify(cats)
+    q = Cat.query
+    q = q.order_by(request.args.get('order_by', 'id'))
+    q = q.limit(int(request.args.get("page_size", 9)))
+    q = q.offset(int(request.args.get("page_size", 9)) * int(request.args.get("page", 0)))
+    return cats_schema.jsonify(q.all())
 
 @app.route("/cats/<id>", methods=["GET"])
 def get_cat(id):

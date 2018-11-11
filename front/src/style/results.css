@@ -1,13 +1,18 @@
-body {
-  margin: 0px;
-  padding: 0px;
+.cm-results-container-images {
+  background-size: contain;
+  height: 200px;
+  overflow: hidden;
+  margin-bottom: 100px;
+  max-width: 100%;
 }
 
 .cm-results-images {
-  background-size: auto;
-  border-radius: 50%;
+  border-radius: 10%;
   cursor: pointer;
-  height: 200px;
-  overflow: hidden;
+  height: 100%;
   width: 60%;
+}
+
+.cm-nav-logo {
+  width: 30px;
 }
