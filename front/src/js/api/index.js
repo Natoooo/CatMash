@@ -1,7 +1,7 @@
 import "whatwg-fetch"
 import { stringify } from "qs"
 
-class Db {
+class Api {
   constructor() {
     this.baseUrl = "http://localhost:5000"
     this.baseHeaders = {"Content-Type": "application/json"}
@@ -20,7 +20,7 @@ class Db {
   }
 
   fetchRandomCats() {
-    return fetch(this.baseUrl + "/match", {
+    return fetch(this.baseUrl + "/api/match", {
       method: 'GET',
       headers: this.baseHeaders
     })
@@ -29,7 +29,7 @@ class Db {
   }
 
   fetchCats(opts={'page': 0, 'page_size': 9}) {
-    return fetch(this.baseUrl + "/cats?" + stringify(opts), {
+    return fetch(this.baseUrl + "/api/cats?" + stringify(opts), {
       method: 'GET',
       headers: this.baseHeaders
     })
@@ -38,7 +38,7 @@ class Db {
   }
 
   createVote(loser_id, winner_id) {
-    return fetch(this.baseUrl + "/vote", {
+    return fetch(this.baseUrl + "/api/vote", {
       method: 'POST',
       headers: this.baseHeaders,
       body: JSON.stringify({
@@ -50,4 +50,4 @@ class Db {
   }
 }
 
-export const db = new Db()
+export const api = new Api()

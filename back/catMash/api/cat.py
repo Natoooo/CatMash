@@ -4,7 +4,7 @@ from flask import jsonify, request
 from sqlalchemy import desc
 import random
 
-@app.route("/cats", methods=["GET"])
+@app.route("/api/cats", methods=["GET"])
 def get_cats():
     q = Cat.query
     q = q.order_by(desc(request.args.get('order_by', 'score')))
@@ -12,7 +12,7 @@ def get_cats():
     q = q.offset(int(request.args.get("page_size", 9)) * int(request.args.get("page", 0)))
     return cats_schema.jsonify(q.all())
 
-@app.route("/match", methods=["GET"])
+@app.route("/api/match", methods=["GET"])
 def get_match():
     cats = Cat.query.all()
     left_cat = random.choice(cats)
@@ -25,9 +25,9 @@ def get_match():
             right_cat = rand_cat
             break
 
-    return cats_schema.jsonify([left_cat, right_cat])    
+    return cats_schema.jsonify([left_cat, right_cat])
 
-@app.route("/vote", methods=["POST"])
+@app.route("/api/vote", methods=["POST"])
 def create_vote():
     cat = Cat.query.filter(Cat.id == request.json.get('winner_id')).first()
     cat.score += 1

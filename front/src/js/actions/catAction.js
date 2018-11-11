@@ -1,4 +1,4 @@
-import { db } from "../api/index"
+import { api } from "../api/index"
 
 export const CATS_RECEIVED = "CATS_RECEIVED"
 export const FACEMASH = "FACEMASH"
@@ -15,7 +15,7 @@ export function facemashReceived(facemash) {
 
 export function fetchRandomCats() {
   return (dispatch) => {
-    db.fetchRandomCats()
+    api.fetchRandomCats()
     .then((facemash) => {
       console.log('GOT_CATS')
       dispatch(facemashReceived(facemash))
@@ -38,13 +38,25 @@ export function catsReceived(cats) {
 export function fetchCats() {
   return (dispatch, getState) => {
     let pageNumber = Math.floor(getState().cats.length / PAGE_SIZE)
-    db.fetchCats({ page: pageNumber, page_size: PAGE_SIZE})
+    api.fetchCats({ page: pageNumber, page_size: PAGE_SIZE})
     .then((cats) => {
       console.log('GOT_12_IMAGES')
       dispatch(catsReceived(cats))
     })
     .catch(() => {
       console.log('GOT_ERROR_12_IMAGES')
+    })
+  }
+}
+
+export function vote(loser_id, winner_id) {
+  return (dispatch) => {
+    api.createVote(loser_id, winner_id)
+    .then(() => {
+      console.log("GOT_VOTE")
+    })
+    .catch(() => {
+      console.log("GOT_ERROR_VOTE")
     })
   }
 }

@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { connect } from "react-redux"
 import { fetchRandomCats } from "../../actions/catAction"
-import { vote } from "../../actions/voteAction"
+import { vote } from "../../actions/catAction"
 
 class FaceMash extends Component {
   constructor(props) {
