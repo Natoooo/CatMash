@@ -5,34 +5,37 @@ body {
   padding: 0px;
 }
 
-.cm-title-logo {
+.cm-app-title-logo {
   background-color: transparent;
   display: block;
   margin: 10px auto;
   width: 10%;
 }
 
-.cm-title {
+.cm-app-title {
   font-size: 40px;
   font-weight: 1000;
   margin-bottom: 80px;
 }
 
-.cm-subtitle {
+.cm-app-subtitle {
   margin-bottom: 80px;
 }
 
-.cm-container-images {
-  background-size: cover;
+.cm-app-container-images {
   height: 300px;
   overflow: hidden;
   margin-bottom: 100px;
   max-width: 100%;
 }
 
-.cm-images {
-  border-radius: 10%;
+.cm-app-images {
+  background-position: center;
+  background-size: cover;
+  border-radius: 5%;
+  box-shadow: 1px 1px 12px #555;
   cursor: pointer;
   height: 100%;
+  margin: 0px auto;
   width: 60%;
 }

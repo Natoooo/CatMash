@@ -1,4 +1,4 @@
-import { db } from "../database/db"
+import { db } from "../api/index"
 
 export function vote(loser_id, winner_id) {
   return (dispatch) => {

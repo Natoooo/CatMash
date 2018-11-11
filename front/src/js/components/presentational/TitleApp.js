@@ -6,14 +6,14 @@ class TitleApp extends Component {
       <div className="container mb-3 mw-100">
         <div className="container">
           <img
-            src="src/style/logo.png"
-            className="cm-title-logo"
+            src="src/style/images/logo.png"
+            className="cm-app-title-logo"
             alt="logo">
           </img>
         </div>
 
         <div className="container text-center">
-          <div className="cm-title">CAT  MASH</div>
+          <div className="cm-app-title">CAT  MASH</div>
         </div>
       </div>
     )

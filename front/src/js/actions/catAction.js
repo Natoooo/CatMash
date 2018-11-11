@@ -1,8 +1,8 @@
-import { db } from "../database/db"
+import { db } from "../api/index"
 
 export const CATS_RECEIVED = "CATS_RECEIVED"
 export const FACEMASH = "FACEMASH"
-const PAGE_SIZE = 9
+const PAGE_SIZE = 12
 
 export function facemashReceived(facemash) {
   return {
@@ -37,13 +37,14 @@ export function catsReceived(cats) {
 
 export function fetchCats() {
   return (dispatch, getState) => {
-    db.fetchCats({ page: Math.floor(getState().cats.length / PAGE_SIZE), page_size: PAGE_SIZE})
+    let pageNumber = Math.floor(getState().cats.length / PAGE_SIZE)
+    db.fetchCats({ page: pageNumber, page_size: PAGE_SIZE})
     .then((cats) => {
-      console.log('GOT_9_IMAGES')
+      console.log('GOT_12_IMAGES')
       dispatch(catsReceived(cats))
     })
     .catch(() => {
-      console.log('GOT_ERROR_9_IMAGES')
+      console.log('GOT_ERROR_12_IMAGES')
     })
   }
 }

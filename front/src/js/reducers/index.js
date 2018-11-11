@@ -1,9 +1,9 @@
 import { combineReducers } from "redux"
-import { catsReducer } from "./catsReducer"
+import { catReducer } from "./catReducer"
 import { facemashReducer } from "./facemashReducer"
 
 const allReducers = combineReducers({
-  cats: catsReducer,
+  cats: catReducer,
   facemash: facemashReducer
 })
 
