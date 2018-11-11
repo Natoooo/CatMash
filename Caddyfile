@@ -1,0 +1,6 @@
+http://0.0.0.0:80
+
+root front/dist
+tls off
+
+proxy /api localhost:5000

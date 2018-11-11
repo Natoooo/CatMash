@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { connect } from "react-redux"
-import { fetchCats } from "../../actions/catAction"
+import { fetchCats, emptyCats } from "../../actions/catAction"
+import path from "../../../style/images/coeur.jpg"
 
 class Rank extends Component {
   constructor(props) {
@@ -10,6 +11,7 @@ class Rank extends Component {
   }
 
   componentDidMount() {
+    this.props.emptyCats()
     this.props.fetchCats()
   }
 
@@ -29,7 +31,7 @@ class Rank extends Component {
                 <div className="col-lg-3 col-md-4 col-sm-6 mb-4 cm-results-container-images" key={key}>
                   <div className="cm-results-images img-responsive" style={{"backgroundImage": "url("+ cat.url +")"}}>
                   </div>
-                  <p className="cm-results-counter-votes">{cat.score}<img className="cm-results-icone-like" src="src/style/images/coeur.jpg"/></p>
+                  <p className="cm-results-counter-votes">{cat.score}<img className="cm-results-icone-like" src={path}/></p>
                 </div>
               )
             })
@@ -49,7 +51,8 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
   return ({
-    fetchCats: () => { dispatch(fetchCats()) }
+    fetchCats: () => { dispatch(fetchCats()) },
+    emptyCats: () => { dispatch(emptyCats()) }
   })
 }
 

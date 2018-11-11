@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import path from "../../../style/images/logo.png"
 
 class TitleApp extends Component {
   render() {
@@ -6,7 +7,7 @@ class TitleApp extends Component {
       <div className="container mb-3 mw-100">
         <div className="container">
           <img
-            src="src/style/images/logo.png"
+            src={path}
             className="cm-app-title-logo"
             alt="logo">
           </img>

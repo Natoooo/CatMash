@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import { Link } from "react-router-dom"
+import path from "../../../style/images/logo.png"
 
 class NavBar extends Component {
   render() {
@@ -7,7 +8,7 @@ class NavBar extends Component {
       <nav className="navbar navbar-dark bg-dark mb-4 pr-2 p-0">
         <div className="navbar-header">
           <a className="navbar-brand m-1" href="#">
-            <img alt="Brand" className="cm-nav-logo" src="src/style/images/logo.png" />
+            <img alt="Brand" className="cm-nav-logo" src={path} />
             CATMASH
           </a>
         </div>

@@ -3,7 +3,7 @@ import { stringify } from "qs"
 
 class Api {
   constructor() {
-    this.baseUrl = "http://localhost:5000"
+    this.baseUrl = ""
     this.baseHeaders = {"Content-Type": "application/json"}
   }
 

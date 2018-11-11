@@ -1,6 +1,7 @@
 import { api } from "../api/index"
 
 export const CATS_RECEIVED = "CATS_RECEIVED"
+export const EMPTY_CATS = "EMPTY_CATS"
 export const FACEMASH = "FACEMASH"
 const PAGE_SIZE = 12
 
@@ -17,7 +18,6 @@ export function fetchRandomCats() {
   return (dispatch) => {
     api.fetchRandomCats()
     .then((facemash) => {
-      console.log('GOT_CATS')
       dispatch(facemashReceived(facemash))
     })
     .catch(() => {
@@ -40,7 +40,6 @@ export function fetchCats() {
     let pageNumber = Math.floor(getState().cats.length / PAGE_SIZE)
     api.fetchCats({ page: pageNumber, page_size: PAGE_SIZE})
     .then((cats) => {
-      console.log('GOT_12_IMAGES')
       dispatch(catsReceived(cats))
     })
     .catch(() => {
@@ -53,10 +52,16 @@ export function vote(loser_id, winner_id) {
   return (dispatch) => {
     api.createVote(loser_id, winner_id)
     .then(() => {
-      console.log("GOT_VOTE")
     })
     .catch(() => {
       console.log("GOT_ERROR_VOTE")
     })
+  }
+}
+
+export function emptyCats() {
+  return {
+    type: EMPTY_CATS,
+    payload: {}
   }
 }

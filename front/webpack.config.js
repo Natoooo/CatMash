@@ -1,6 +1,11 @@
 const HtmlWebpackPlugin = require("html-webpack-plugin")
 
 module.exports = {
+  devServer: {
+    proxy: {
+      '/api' : "http://localhost:5000"
+    }
+  },
   module: {
     rules: [
       {
@@ -21,7 +26,9 @@ module.exports = {
         use: [
           {
             loader: "file-loader",
-            options: {}
+            options: {
+              outputPath: "images/"
+            }
           }
         ]
       },
